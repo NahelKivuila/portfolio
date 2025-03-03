@@ -1,12 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
-import { Spotlight } from "./ui/spotlight"
-import Link from "next/link"
 import {ArrowDown} from "lucide-react";
+import {useEffect, useState} from "react";
 
 const Hero = () => {
+    const [typedText, setTypedText] = useState("")
+    const fullText = "Développeur d'applications"
+    const typingSpeed = 150
+
+    useEffect(() => {
+        if (typedText.length < fullText.length) {
+            const timeout = setTimeout(() => {
+                setTypedText(fullText.slice(0, typedText.length + 1))
+            }, typingSpeed)
+
+            return () => clearTimeout(timeout)
+        }
+    }, [typedText])
 
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId)
@@ -16,72 +27,46 @@ const Hero = () => {
     }
 
     return (
-        <section id="home">
-            <Spotlight className="min-h-screen flex items-center justify-center dark:bg-black overflow-hidden">
-                <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+        <section id="home" className={'relative z-10'}>
+                <div className="container min-h-screen justify-center overflow-hidden mx-auto px-6 flex flex-col md:flex-row items-center">
                     <motion.div
-                        className="md:w-1/2 text-center md:text-left"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="md:w-1/2 text-center md:text-left justify-items-center"
+                        initial={{opacity: 0, x: -20}}
+                        animate={{opacity: 1, x: 0}}
+                        transition={{duration: 0.5, ease: "easeOut"}}
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black dark:from-white to-gray-500">
-                            Salut je m'appelle <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-red-500">Nahel Kivuila</span>
+                        <h1 className="text-4xl text-center md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black dark:from-white to-gray-500">
+                            Salut je m&#39;appelle <br/><span
+                            className="bg-clip-text text-transparent bg-gradient-to-r from-violet-900 to-indigo-500">Nahel Kivuila</span>
                         </h1>
-                        <h2 className="text-2xl md:text-3xl text-gray-300 mb-6 relative">
-                            Developpeur d'applications
-                            <motion.span
-                                className="absolute -bottom-2 left-0 w-full h-0.5 bg-blue-400"
-                                initial={{ scaleX: 0 }}
-                                animate={{ scaleX: 1 }}
-                                transition={{ duration: 1, delay: 0.5 }}
-                            />
-                        </h2>
-                        <p className="text-gray-400 mb-8 pr-2">
-                            Développeur d’application, j’aime créer des solutions qui facilitent la vie des autres.
+                        <div className="h-12 mt-4">
+                            <h2 className="text-2xl text-center sm:text-3xl md:text-4xl font-medium text-muted-foreground">
+                                {typedText}
+                                <span className="animate-blink">|</span>
+                            </h2>
+                        </div>
+                        <p className="text-gray-400 text-center my-8 pr-2">
+                            Développeur d’applications, j’aime créer des solutions qui facilitent la vie des autres.
                             Ce qui me motive, c’est de rendre la technologie accessible et utile au quotidien.
                         </p>
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.8 }}
+                            initial={{opacity: 0, y: 20}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 0.5, delay: 0.8}}
+                            className={'justify-items-center'}
                         >
-                            <motion.a
-                                href="#contact"
-                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-blue-400 transition-transform duration-300 ease-out hover:scale-105"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ duration: 0.2 }}
+                            <motion.button
+                                onClick={() => scrollToSection("contact")}
+                                className="group cursor-pointer relative inline-flex items-center justify-center px-8 py-3 overflow-hidden rounded-full bg-gradient-to-r from-violet-950 to-violet-800 transition-transform duration-300 ease-out hover:scale-105"
+                                whileHover={{scale: 1.05}}
+                                whileTap={{scale: 0.95}}
+                                transition={{duration: 0.2}}
                             >
                                 <span className="relative text-white font-semibold">Me contacter</span>
-                                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[length:200%_100%] animate-gradient-x" />
-                            </motion.a>
+                                <span
+                                    className="absolute inset-0 bg-gradient-to-r from-violet-800 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[length:200%_100%] animate-gradient-x"/>
+                            </motion.button>
                         </motion.div>
-                    </motion.div>
-                    <motion.div
-                        className="md:w-1/2 mt-12 md:mt-0 relative"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            duration: 0.5,
-                            ease: [0.6, -0.05, 0.01, 0.99],
-                        }}
-                    >
-                        <div className="relative w-full h-0 pb-[100%] md:pb-[75%]">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-30 animate-pulse" />
-                            <div className="absolute inset-0">
-                                <div className="bg-gray-100 dark:bg-black rounded-2xl h-full w-full relative">
-                                    <Image
-                                        src="/avatar.PNG"
-                                        alt="Nahel Kivuila Avatar"
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
-                                        priority
-                                    />
-                                </div>
-                            </div>
-                        </div>
                     </motion.div>
                     <button
                         onClick={() => scrollToSection("about")}
@@ -91,7 +76,6 @@ const Hero = () => {
                         <ArrowDown className="dark:text-white h-10 w-10" />
                     </button>
                 </div>
-            </Spotlight>
         </section>
     )
 }

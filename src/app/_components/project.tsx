@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import {ExternalLink, Github, Share2} from "lucide-react"
+import {ExternalLink, Github} from "lucide-react"
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
@@ -46,7 +46,7 @@ const Projects = () => {
     })
 
     return (
-        <section id="projects" className="py-20">
+        <section id="projects" className="relative z-10 py-20">
             <div className="container mx-auto px-6">
                 <motion.div
                     className="text-center mb-12"
@@ -61,7 +61,7 @@ const Projects = () => {
                         transition={{duration: 0.2}}>
                         Projets
                     </motion.h2>
-                    <p className="text-gray-400">Quelques projets que j'ai réaliés</p>
+                    <p className="text-gray-400">Quelques projets que j&#39;ai réaliés</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion"
-import {FileText, Github, GithubIcon, Linkedin, Mail, Phone} from "lucide-react";
+import {motion} from "framer-motion"
+import {FileText, GithubIcon, Linkedin, Mail} from "lucide-react";
 import Link from "next/link";
 import {useInView} from "react-intersection-observer";
 
@@ -18,9 +18,8 @@ const Contact = () => {
         { icon: GithubIcon, text: "GitHub", href: "https://www.linkedin.com/in/nahelkivuila" },
     ]
 
-
     return (
-        <section id="contact" className="py-20 dark:bg-black">
+        <section id="contact" className="relative z-10 py-20">
             <div className="container mx-auto px-6">
                 <motion.div
                     className="text-center mb-12"
