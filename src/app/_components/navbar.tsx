@@ -45,7 +45,7 @@ const Navbar = () => {
                     Nahel Kivuila
                 </Link>
                 <ul className="flex space-x-6">
-                    {["home", "about", "projects", "skills", "contact"].map((item) => (
+                    {["accueil", "à propos", "projets", "compétence", "contact"].map((item) => (
                         <li key={item}>
                             <button
                                 onClick={() => scrollToSection(item)}

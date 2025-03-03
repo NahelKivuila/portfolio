@@ -42,7 +42,7 @@ const skillCategories = [
     },
     {
         id: "database",
-        label: "Database",
+        label: "Base de données",
         icon: <Database className="h-5 w-5 mr-2"/>,
         skills: [
             {name: "Oracle", image: "/db/oracle.png"},
@@ -53,7 +53,7 @@ const skillCategories = [
     },
     {
         id: "tools",
-        label: "Tools & Others",
+        label: "Outils & Autre",
         icon: <Wrench className="h-5 w-5 mr-2"/>,
         skills: [
             {name: "Git/GitHub", image: "/tools/git.png"},
@@ -73,8 +73,9 @@ const Skills = () => {
     return (
         <section id="skills" className={'relative z-10'}>
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl px-6 md:text-5xl text-center mb-12">My
-                    Skills</h2>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl px-6 md:text-5xl text-center mb-12">
+                    Mes compétences
+                </h2>
 
                 <Tabs defaultValue="frontend" className="w-full">
                     <div className="flex justify-center mb-8">

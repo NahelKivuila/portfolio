@@ -17,10 +17,10 @@ const Footer = () => {
             <footer className=" border-t py-8 md:py-12">
                 <div className="container m-auto flex flex-col items-center justify-center gap-4 md:gap-6 text-center">
                     <div className="flex items-center justify-center space-x-6">
-                        <Link href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <Link href="https://github.com/NahelKivuila" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <Github className="h-5 w-5 hover:text-primary transition-colors"/>
                         </Link>
-                        <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                        <Link href="https://www.linkedin.com/in/nahel-fran%C3%A7ois-kivuila-27b79b276/" target="_blank" rel="noopener noreferrer"
                               aria-label="LinkedIn">
                             <Linkedin className="h-5 w-5 hover:text-primary transition-colors"/>
                         </Link>
@@ -28,7 +28,7 @@ const Footer = () => {
 
                     <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <ul className="flex space-x-6">
-                            {["home", "about", "projects", "skills", "contact"].map((item) => (
+                            {["accueil", "à propos", "projets", "compétence", "contact"].map((item) => (
                                 <li key={item}>
                                     <button
                                         onClick={() => scrollToSection(item)}

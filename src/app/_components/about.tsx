@@ -1,10 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import {Button} from "@/components/ui/button";
-import Link from "next/link";
-import {FileText} from "lucide-react";
+import {motion} from "framer-motion"
+import {useInView} from "react-intersection-observer"
 import Image from "next/image";
 
 const About = () => {
@@ -27,7 +24,7 @@ const About = () => {
                         className="text-3xl md:text-4xl font-bold dark:text-white px-4 py-2"
                         whileHover={{scale: 1.1}}
                         transition={{duration: 0.2}}>
-                        About Me
+                        À propos de moi
                     </motion.h2>
                 </motion.div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -79,12 +76,12 @@ const About = () => {
                             en train de m'entrainer, de lire un livre ou bien d'apprendre une nouvelle langue
                         </p>
 
-                        <Button asChild variant="outline" className="mt-4">
-                            <Link href="/" download>
-                                <FileText className="mr-2 h-4 w-4"/>
-                                Afficher mon CV
-                            </Link>
-                        </Button>
+                        {/*<Button asChild variant="outline" className="mt-4">*/}
+                        {/*    <Link href="/" download>*/}
+                        {/*        <FileText className="mr-2 h-4 w-4"/>*/}
+                        {/*        Afficher mon CV*/}
+                        {/*    </Link>*/}
+                        {/*</Button>*/}
                     </div>
                 </div>
                 {/*<motion.div*/}

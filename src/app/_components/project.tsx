@@ -1,9 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import {motion} from "framer-motion"
+import {useInView} from "react-intersection-observer"
 import Image from "next/image"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card"
 import {ExternalLink, Github} from "lucide-react"
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
@@ -16,7 +16,8 @@ const projects = [
             "J'ai developpé un portfolio",
         image:
             "/portfolio.png",
-        link: "https://github.com/NahelKivuila/portfolio",
+        code: "https://github.com/NahelKivuila/portfolio",
+        demo: "https://nahelkivuila.com",
         technologies: ["Next.js", "TailWindCSS", "Jenkins", "Docker"],
     },
     {
@@ -25,7 +26,8 @@ const projects = [
             "Une application avec une inteligence artificiel qui gener des recette de cuisine en fonction de ce que l'utilisateur entre en input",
         image:
             "/chef-buddy.png",
-        link: "https://github.com/NahelKivuila/chef-buddy",
+        code: "https://github.com/NahelKivuila/chef-buddy",
+        demo: "https://chef-buddy.nahelkivuila.com",
         technologies: ["Next.JS", "Open AI", "TailWindCSS", "Jenkins", "Docker"],
     },
     {
@@ -34,7 +36,7 @@ const projects = [
             "est un gestionnaire de projets de construction conçu pour faciliter la collaboration entre les différentes parties prenantes. Partager des fichiers, communiquer des mises à jour ou suivre les étapes du projet.",
         image:
             "/wiiseto.png",
-        link: "https://wiiseto.com",
+        demo: "https://wiiseto.com",
         technologies: ["Java", "Spring Boot", "LiquiBase", "PostgresSql", "Angular", "TailWindCSS", "Docker"],
     },
 ]
@@ -64,12 +66,27 @@ const Projects = () => {
                     <p className="text-gray-400">Quelques projets que j&#39;ai réaliés</p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <motion.div
+                    initial={{opacity: 0, y: 20}}
+                    animate={inView ? {opacity: 1, y: 0} : {}}
+                    transition={{duration: 0.5}}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((project) => (
                         <Card key={project.title} className="overflow-hidden flex flex-col h-full">
-                            <div className="relative h-48 w-full">
-                                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill
-                                       className="object-cover"/>
+                            <div className="relative h-auto w-full p-6">
+                                <motion.div
+                                    className="relative"
+                                    whileHover={{scale: 1.05}}
+                                >
+                                    <Image
+                                        src={project.image || "/placeholder.svg"}
+                                        alt={project.title}
+                                        width={1200}
+                                        height={700}
+                                        onClick={() => window.open(project.demo)}
+                                        className="object-cover rounded-2xl cursor-alias"/>
+
+                                </motion.div>
                             </div>
                             <CardHeader>
                                 <CardTitle>{project.title}</CardTitle>
@@ -85,15 +102,18 @@ const Projects = () => {
                                 </div>
                             </CardContent>
                             <CardFooter className="flex gap-2">
-                                <Button asChild variant="outline" size="sm">
-                                    <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                                        <Github className="mr-2 h-4 w-4"/>
-                                        Code
-                                    </Link>
-                                </Button>
-                                {project.link && (
+                                {project.code && (
+                                    <Button asChild variant="outline" size="sm">
+                                        <Link href={project.code} target="_blank" rel="noopener noreferrer">
+                                            <Github className="mr-2 h-4 w-4"/>
+                                            Code
+                                        </Link>
+                                    </Button>
+                                )}
+
+                                {project.demo && (
                                     <Button asChild size="sm">
-                                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                                        <Link href={project.demo} target="_blank" rel="noopener noreferrer">
                                             <ExternalLink className="mr-2 h-4 w-4"/>
                                             Demo
                                         </Link>
@@ -102,7 +122,7 @@ const Projects = () => {
                             </CardFooter>
                         </Card>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )

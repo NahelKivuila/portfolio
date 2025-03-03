@@ -1,8 +1,7 @@
 "use client";
 
 import {motion} from "framer-motion"
-import {FileText, GithubIcon, Linkedin, Mail} from "lucide-react";
-import Link from "next/link";
+import {GithubIcon, Linkedin, Mail} from "lucide-react";
 import {useInView} from "react-intersection-observer";
 
 const Contact = () => {
@@ -14,8 +13,8 @@ const Contact = () => {
 
     const contactInfo = [
         { icon: Mail, text: "nahel.kivuila@gmail.com", href: "mailto:nahel.kivuila@gmail.com" },
-        { icon: Linkedin, text: "LinkedIn", href: "https://www.linkedin.com/in/nahelkivuila" },
-        { icon: GithubIcon, text: "GitHub", href: "https://www.linkedin.com/in/nahelkivuila" },
+        { icon: Linkedin, text: "LinkedIn", href: "https://www.linkedin.com/in/nahel-fran%C3%A7ois-kivuila-27b79b276/" },
+        { icon: GithubIcon, text: "GitHub", href: "https://github.com/NahelKivuila" },
     ]
 
     return (
@@ -46,19 +45,19 @@ const Contact = () => {
                             <span className="text-lg">{item.text}</span>
                         </motion.a>
                     ))}
-                    <Link href="/" className="w-full">
-                        <motion.div
-                            className="flex items-center justify-center p-4 border-1 bg-white hover:bg-zinc-100 dark:bg-zinc-800 rounded-lg darkhover:bg-zinc-700 transition-colors duration-300"
-                            initial={{opacity: 0, y: 20}}
-                            animate={inView ? {opacity: 1, y: 0} : {}}
-                            transition={{duration: 0.5, delay: 0.4}}
-                            whileHover={{scale: 1.05}}
-                            whileTap={{scale: 0.95}}
-                        >
-                            <FileText className="w-6 h-6 mr-4 text-blue-400"/>
-                            <span className="text-lg">Mon CV</span>
-                        </motion.div>
-                    </Link>
+                    {/*<Link href="/" className="w-full">*/}
+                    {/*    <motion.div*/}
+                    {/*        className="flex items-center justify-center p-4 border-1 bg-white hover:bg-zinc-100 dark:bg-zinc-800 rounded-lg darkhover:bg-zinc-700 transition-colors duration-300"*/}
+                    {/*        initial={{opacity: 0, y: 20}}*/}
+                    {/*        animate={inView ? {opacity: 1, y: 0} : {}}*/}
+                    {/*        transition={{duration: 0.5, delay: 0.4}}*/}
+                    {/*        whileHover={{scale: 1.05}}*/}
+                    {/*        whileTap={{scale: 0.95}}*/}
+                    {/*    >*/}
+                    {/*        <FileText className="w-6 h-6 mr-4 text-blue-400"/>*/}
+                    {/*        <span className="text-lg">Mon CV</span>*/}
+                    {/*    </motion.div>*/}
+                    {/*</Link>*/}
                 </div>
             </div>
         </section>
