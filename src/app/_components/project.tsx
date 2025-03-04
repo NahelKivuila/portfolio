@@ -13,7 +13,7 @@ const projects = [
     {
         title: "Portfolio",
         description:
-            "J'ai developpé un portfolio",
+            "J'ai developpé ce portfolio qui mets en avant mon travail et me présente",
         image:
             "/portfolio.png",
         code: "https://github.com/NahelKivuila/portfolio",
@@ -23,7 +23,7 @@ const projects = [
     {
         title: "Chef buddy",
         description:
-            "Une application avec une inteligence artificiel qui gener des recette de cuisine en fonction de ce que l'utilisateur entre en input",
+            "Une application avec une inteligence artificiel qui génère des recette de cuisine en fonction de ce que l'utilisateur entre en input",
         image:
             "/chef-buddy.png",
         code: "https://github.com/NahelKivuila/chef-buddy",
@@ -33,7 +33,7 @@ const projects = [
     {
         title: "Wiiseto",
         description:
-            "est un gestionnaire de projets de construction conçu pour faciliter la collaboration entre les différentes parties prenantes. Partager des fichiers, communiquer des mises à jour ou suivre les étapes du projet.",
+            "Wiiseto est un gestionnaire de projets de construction conçu pour faciliter la collaboration entre les différentes parties prenantes. Partager des fichiers, communiquer des mises à jour ou suivre les étapes du projet.",
         image:
             "/wiiseto.png",
         demo: "https://wiiseto.com",

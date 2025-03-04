@@ -48,10 +48,10 @@ const About = () => {
                                 <div className="absolute inset-0">
                                     <div className="bg-gray-100 dark:bg-black rounded-2xl h-full w-full relative">
                                         <Image
-                                            src="/avatar.PNG"
+                                            src="/avatar.png"
                                             alt="Nahel Kivuila Avatar"
-                                            layout="fill"
-                                            objectFit="cover"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             className="rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
                                             priority
                                         />
@@ -64,16 +64,16 @@ const About = () => {
                     <div className="space-y-6 justify-items-center md:justify-items-start">
                         <h3 className="text-2xl font-bold text-center sm:text-start">Nahel Kivuila</h3>
                         <p className="text-muted-foreground text-center sm:text-start">
-                            Je suis en formation pour obtenir mon CFC d'informaticien en développement d'applications, accompagné d'une maturité professionnelle.
+                            Je suis en formation pour obtenir mon CFC d&#39;informaticien en développement d&#39;applications, accompagné d&#39;une maturité professionnelle.
                             Cette combinaison me permet de développer des compétences techniques solides et une vision stratégique pour créer des solutions innovantes.
                         </p>
                         <p className="text-muted-foreground text-center md:text-start">
-                            Je suis constamment en quête d'apprentissage, passionné par l'exploration de nouvelles technologies et la découverte de nouvelles compétences.
-                            J'adore échanger et discuter avec les autres, car je crois que chaque conversation est une opportunité d'apprendre et de grandir.
+                            Je suis constamment en quête d&#39;apprentissage, passionné par l&#39;exploration de nouvelles technologies et la découverte de nouvelles compétences.
+                            J&#39;adore échanger et discuter avec les autres, car je crois que chaque conversation est une opportunité d&#39;apprendre et de grandir.
                         </p>
                         <p className="text-muted-foreground text-center md:text-start">
                             Quand je ne suis pas en train de coder tu peux me trouver,
-                            en train de m'entrainer, de lire un livre ou bien d'apprendre une nouvelle langue
+                            en train de m&#39;entrainer, de lire un livre ou bien d&#39;apprendre une nouvelle langue
                         </p>
 
                         {/*<Button asChild variant="outline" className="mt-4">*/}
