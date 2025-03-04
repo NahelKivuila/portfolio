@@ -3,6 +3,7 @@
 import {motion} from "framer-motion"
 import {useInView} from "react-intersection-observer"
 import Image from "next/image";
+import avatar from '../../../public/avatar.png'
 
 const About = () => {
     const [ref, inView] = useInView({
@@ -29,10 +30,6 @@ const About = () => {
                 </motion.div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="flex justify-center">
-                        {/*<div*/}
-                        {/*    className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-primary/20">*/}
-
-                        {/*</div>*/}
                         <motion.div
                             className="relative w-1/3 h-1/3 lg:w-3/4 lg:h-3/4"
                             initial={{opacity: 0, scale: 0.8}}
@@ -48,12 +45,11 @@ const About = () => {
                                 <div className="absolute inset-0">
                                     <div className="bg-gray-100 dark:bg-black rounded-2xl h-full w-full relative">
                                         <Image
-                                            src="/avatar.png"
-                                            alt="Nahel Kivuila Avatar"
+                                            src={avatar}
                                             fill
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            alt="Nahel Kivuila Avatar"
                                             className="rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
-                                            priority
                                         />
                                     </div>
                                 </div>
